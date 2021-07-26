@@ -1,7 +1,15 @@
 ﻿@namespace PlannerApp.Components
 @*UI View Selector*@
-<MudText Typo="Typo.h6">My Plans</MudText>
-<div class="mt-4" />
-@*<PlanCardsList FetchPlans="GetPlansAsync"/>*@
-<PlansTable />
+@*<MudText Typo="Typo.h6">My Plans</MudText>*@
 
+<MudIconButton Icon="@Icons.Material.Filled.GridView" Color="Color.Primary" Disabled="_isCardsViewEnable" OnClick="SetCardsView"></MudIconButton>
+<MudIconButton Icon="@Icons.Material.Filled.TableView" Color="Color.Primary" Disabled="@(!_isCardsViewEnable)" OnClick="SetTableView"></MudIconButton>
+<div class="mt-4" />
+@if (_isCardsViewEnable)
+{
+    <PlanCardsList FetchPlans="GetPlansAsync" />
+}
+else
+{
+<PlansTable />
+}

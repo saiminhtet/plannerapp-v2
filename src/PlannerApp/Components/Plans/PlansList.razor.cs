@@ -38,15 +38,29 @@ namespace PlannerApp.Components
             }
             catch (ApiException ex)
             {
-                _errorMessage = ex.ApiErrorResponse.Message;  
+                _errorMessage = ex.ApiErrorResponse.Message;
             }
-            catch  (Exception ex)
+            catch (Exception ex)
             {
                 _errorMessage = ex.Message;
             }
-           
+
             _isBusy = false;
             return null;
         }
+
+        #region View Toggler
+        private bool _isCardsViewEnable = true;
+
+        private void SetCardsView()
+        {
+            _isCardsViewEnable = true;
+        }
+
+        private void SetTableView()
+        {
+            _isCardsViewEnable = false;
+        }
+        #endregion
     }
 }
