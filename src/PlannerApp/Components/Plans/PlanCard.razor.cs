@@ -22,5 +22,6 @@ namespace PlannerApp.Components
 
         [Parameter]
         public EventCallback<PlanSummary> OnEditClicked { get; set; }
+
     }
 }

@@ -1,5 +1,6 @@
 ﻿@namespace PlannerApp.Components
 
+<h1>@_title</h1>
 <MudPaper Class="py-1 px-2">
     <div class="d-flex">
         <MudTextField @bind-Value="_query" Variant="Variant.Outlined" />
@@ -47,7 +48,7 @@ else
             foreach(var plan in _result.Records)
                     {
                         <MudItem sm="12" md="4" lg="3">
-                            <PlanCard PlanSummary="plan" />
+                            <PlanCard PlanSummary="plan" OnViewClicked="OnViewClicked" />
                         </MudItem> 
                     }
         }

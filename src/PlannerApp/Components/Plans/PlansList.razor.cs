@@ -62,5 +62,6 @@ namespace PlannerApp.Components
             _isCardsViewEnable = false;
         }
         #endregion
+    
     }
 }

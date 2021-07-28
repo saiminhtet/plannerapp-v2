@@ -5,6 +5,7 @@
 <MudIconButton Icon="@Icons.Material.Filled.GridView" Color="Color.Primary" Disabled="_isCardsViewEnable" OnClick="SetCardsView"></MudIconButton>
 <MudIconButton Icon="@Icons.Material.Filled.TableView" Color="Color.Primary" Disabled="@(!_isCardsViewEnable)" OnClick="SetTableView"></MudIconButton>
 <div class="mt-4" />
+
 @if (_isCardsViewEnable)
 {
     <PlanCardsList FetchPlans="GetPlansAsync" />

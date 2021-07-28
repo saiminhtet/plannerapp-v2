@@ -5,7 +5,8 @@
 Welcome to your new app.
 
 <SurveyPrompt Title="How is Blazor working for you?" />
-
+<p>Current Count: @currentCount</p>
+<Counter SetCurrentCount="SetCurrentCount"></Counter>
 <AuthorizeView>
     <Authorized>
         @*<h2>Welcome @context.User.FindFirst(System.Security.Claims.ClaimTypes.GivenName).Value</h2>*@
@@ -20,5 +21,9 @@ Welcome to your new app.
 {
     //[CascadingParameter]
     //public Task<AuthenticationState> AuthState { get; set; }
-
+    private int currentCount;
+    private void SetCurrentCount(int value)
+    {
+        currentCount = value;
+    }
 }
